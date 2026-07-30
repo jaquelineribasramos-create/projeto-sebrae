@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fashion World | Moda por Décadas & Perfumaria Exclusiva</title>
+    <title>Fashion World | Moda, Tendências Virais e Perfumaria</title>
     <style>
         :root {
-            --bg-color: #0f0f11;
-            --card-bg: #18181c;
-            --accent: #d4af37;
-            --accent-hover: #f3cf65;
-            --text-main: #f0f0f0;
-            --text-muted: #a0a0ab;
-            --border-color: #2a2a32;
+            --bg-body: #0d0608;
+            --bg-card: #1c0a0e;
+            --red-primary: #8b0000;
+            --red-bright: #d62828;
+            --gold-primary: #d4af37;
+            --gold-light: #f3cf65;
+            --text-light: #fefefe;
+            --text-muted: #d0b8be;
+            --border-color: #3d141a;
         }
 
         * {
@@ -23,99 +25,159 @@
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
+            background-color: var(--bg-body);
+            color: var(--text-light);
             line-height: 1.6;
+        }
+
+        /* Top Bar Dourada */
+        .top-bar {
+            background: linear-gradient(90deg, var(--gold-primary), var(--gold-light), var(--gold-primary));
+            color: #000;
+            text-align: center;
+            padding: 6px 10px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
         }
 
         /* Cabeçalho */
         header {
-            background: linear-gradient(180deg, #000000 0%, var(--bg-color) 100%);
+            background: linear-gradient(180deg, #000000 0%, var(--red-primary) 100%);
             padding: 40px 20px;
             text-align: center;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 2px solid var(--gold-primary);
         }
 
         .logo {
-            font-size: 3rem;
-            font-weight: 800;
+            font-size: 3.2rem;
+            font-weight: 900;
             letter-spacing: 4px;
             text-transform: uppercase;
-            color: #fff;
-            margin-bottom: 5px;
+            color: var(--text-light);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
         }
 
         .logo span {
-            color: var(--accent);
+            color: var(--gold-primary);
         }
 
         header p {
-            color: var(--text-muted);
-            font-size: 1rem;
+            color: var(--gold-light);
+            font-size: 1.05rem;
             letter-spacing: 1px;
+            margin-top: 5px;
         }
 
-        /* Navegação */
+        /* Menu de Navegação */
         nav {
             background-color: #000;
             position: sticky;
             top: 0;
             z-index: 100;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--gold-primary);
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
         }
 
         nav a {
-            color: var(--text-main);
+            color: var(--text-light);
             text-decoration: none;
-            padding: 15px 25px;
+            padding: 15px 22px;
             font-size: 0.85rem;
             text-transform: uppercase;
-            font-weight: 600;
+            font-weight: bold;
             letter-spacing: 1.5px;
             transition: all 0.3s ease;
         }
 
         nav a:hover {
-            color: var(--accent);
-            background-color: rgba(212, 175, 55, 0.05);
+            color: #000;
+            background-color: var(--gold-primary);
         }
 
-        /* Container Geral */
+        /* Container Principal */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 40px 20px;
         }
 
+        .section-header {
+            border-left: 4px solid var(--gold-primary);
+            padding-left: 15px;
+            margin-bottom: 30px;
+        }
+
         .section-title {
             font-size: 2rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-bottom: 10px;
-            color: #fff;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 50%;
-            height: 3px;
-            background-color: var(--accent);
-            margin-top: 5px;
+            color: var(--gold-primary);
         }
 
         .section-subtitle {
             color: var(--text-muted);
-            margin-bottom: 30px;
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
 
-        /* Grid de Roupas / Estilos por Época */
+        /* GRID: Notícias Virais & Desfiles */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .news-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold-primary);
+        }
+
+        .news-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .news-body {
+            padding: 20px;
+        }
+
+        .tag {
+            background-color: var(--red-bright);
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .news-title {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+
+        .news-desc {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* GRID: Roupas por Categorias de Anos */
         .era-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -124,35 +186,34 @@
         }
 
         .product-card {
-            background-color: var(--card-bg);
+            background-color: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 8px;
             overflow: hidden;
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .product-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent);
+            border-color: var(--gold-primary);
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.15);
         }
 
         .product-img {
             width: 100%;
-            height: 280px;
+            height: 300px;
             object-fit: cover;
-            display: block;
         }
 
         .product-info {
             padding: 20px;
         }
 
-        .badge-era {
-            background-color: var(--accent);
+        .badge-gold {
+            background: linear-gradient(45deg, var(--gold-primary), var(--gold-light));
             color: #000;
             font-weight: bold;
             font-size: 0.75rem;
-            padding: 4px 10px;
+            padding: 4px 12px;
             border-radius: 20px;
             text-transform: uppercase;
             display: inline-block;
@@ -161,23 +222,23 @@
 
         .product-title {
             font-size: 1.3rem;
-            margin-bottom: 10px;
             color: #fff;
+            margin-bottom: 8px;
         }
 
         .product-desc {
             color: var(--text-muted);
             font-size: 0.9rem;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .product-tags {
+            color: var(--gold-primary);
             font-size: 0.8rem;
-            color: var(--accent);
-            font-weight: 500;
+            font-weight: 600;
         }
 
-        /* Seção de Perfumes com Ficha Técnica */
+        /* SEÇÃO: Perfumes Exclusivos com Ficha Técnica */
         .perfumes-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -186,11 +247,15 @@
         }
 
         .perfume-card {
-            background-color: var(--card-bg);
+            background-color: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 8px;
             padding: 25px;
-            position: relative;
+            transition: border-color 0.3s ease;
+        }
+
+        .perfume-card:hover {
+            border-color: var(--red-bright);
         }
 
         .perfume-header {
@@ -205,12 +270,12 @@
             height: 140px;
             object-fit: cover;
             border-radius: 6px;
-            border: 1px solid var(--border-color);
+            border: 1px solid var(--gold-primary);
         }
 
         .perfume-main-info h3 {
             font-size: 1.4rem;
-            color: var(--accent);
+            color: var(--gold-primary);
             margin-bottom: 5px;
         }
 
@@ -223,15 +288,15 @@
 
         /* Ficha Técnica */
         .ficha-tecnica {
-            background-color: rgba(0, 0, 0, 0.4);
-            border-left: 3px solid var(--accent);
+            background-color: rgba(0, 0, 0, 0.6);
+            border-left: 3px solid var(--red-bright);
             padding: 15px;
             border-radius: 0 6px 6px 0;
             font-size: 0.85rem;
         }
 
         .ficha-tecnica h4 {
-            color: #fff;
+            color: var(--gold-light);
             text-transform: uppercase;
             font-size: 0.8rem;
             letter-spacing: 1px;
@@ -260,16 +325,15 @@
         /* Rodapé */
         footer {
             background-color: #000;
-            border-top: 1px solid var(--border-color);
+            border-top: 2px solid var(--gold-primary);
             text-align: center;
             padding: 30px;
             color: var(--text-muted);
             font-size: 0.85rem;
         }
 
-        footer a {
-            color: var(--accent);
-            text-decoration: none;
+        footer strong {
+            color: var(--gold-primary);
         }
 
         @media (max-width: 768px) {
@@ -282,81 +346,127 @@
 </head>
 <body>
 
+    <div class="top-bar">
+        Portal Oficial de Notícias, Tendências e Perfumaria Fina
+    </div>
+
     <header>
         <div class="logo">Fashion <span>World</span></div>
-        <p>Sua revista digital de tendências virais, estilos de época e altíssima perfumaria</p>
+        <p>Notícias Virais, Ícones das Passarelas, Estilos de Época e Fragrâncias Únicas</p>
     </header>
 
     <nav>
-        <a href="#estilos-epocas">Estilos Por Época</a>
-        <a href="#perfumes-exclusivos">Perfumes Exclusivos</a>
-        <a href="#virais">Notícias Virais</a>
+        <a href="#noticias-virais">Notícias Virais</a>
+        <a href="#estilos-epocas">Moda por Épocas</a>
+        <a href="#perfumes-exclusivos">Perfumaria Fina</a>
     </nav>
 
     <div class="container">
 
+        <section id="noticias-virais">
+            <div class="section-header">
+                <h2 class="section-title">Notícias Virais & Passarelas</h2>
+                <p class="section-subtitle">Acompanhe os desfiles mais importantes, ícones do ramo e os momentos mais comentados no mundo da moda.</p>
+            </div>
+
+            <div class="news-grid">
+                <article class="news-card">
+                    <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=600&q=80" alt="Desfile em Paris" class="news-img">
+                    <div class="news-body">
+                        <span class="tag">Desfile em Destaque</span>
+                        <h3 class="news-title">Paris Fashion Week: O desfile futurista que viralizou na internet</h3>
+                        <p class="news-desc">Grandes estilistas apresentaram coleções inovadoras com tecidos sustentáveis e efeitos de iluminação ao vivo na passarela.</p>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Modelos de Sucesso" class="news-img">
+                    <div class="news-body">
+                        <span class="tag">Ícones da Moda</span>
+                        <h3 class="news-title">As supermodelos que estão dominando as capas das revistas mundiais</h3>
+                        <p class="news-desc">Conheça as histórias de sucesso e como artistas e top models reinventaram sua presença no mercado internacional da beleza.</p>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=600&q=80" alt="Tendências Virais" class="news-img">
+                    <div class="news-body">
+                        <span class="tag">Viral</span>
+                        <h3 class="news-title">O acessório inesperado que virou febre no tapete vermelho</h3>
+                        <p class="news-desc">Celebridades adotaram uma nova linha de bolsas conceituais que dividiu a opinião dos críticos e dominou as redes sociais.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+
         <section id="estilos-epocas">
-            <h2 class="section-title">Estilos Virais Por Época</h2>
-            <p class="section-subtitle">As roupas mais procuradas e icônicas dos Anos 2000, 2012, 2016, 2020 e as projeções de 2026.</p>
+            <div class="section-header">
+                <h2 class="section-title">Roupas em Destaque Por Categoria de Época</h2>
+                <p class="section-subtitle">As roupas e estilos mais procurados e icônicos dos Anos 2000, 2012, 2016, 2020 e a projeção para 2026.</p>
+            </div>
 
             <div class="era-grid">
 
                 <article class="product-card">
                     <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&q=80" alt="Estilo Anos 2000 Y2K" class="product-img">
                     <div class="product-info">
-                        <span class="badge-era">Anos 2000 (Y2K)</span>
-                        <h3 class="product-title">Conjunto Velour & Calça Low-Rise</h3>
-                        <p class="product-desc">O auge da cultura pop dos anos 2000. Calças de cintura baixa, agasalhos de veludo molhado brilhante e óculos futuristas transparentes.</p>
-                        <p class="product-tags">#EstiloY2K #CinturaBaixa #PopCulture</p>
+                        <span class="badge-gold">Anos 2000 (Y2K)</span>
+                        <h3 class="product-title">Agasalho Velour & Calça Cintura Baixa</h3>
+                        <p class="product-desc">O ícone pop dos anos 2000: conjuntos em veludo molhado brilhante, óculos de lentes coloridas e tops com brilho.</p>
+                        <p class="product-tags">#EstiloY2K #CinturaBaixa #VelourLook</p>
                     </div>
                 </article>
 
                 <article class="product-card">
-                    <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=600&q=80" alt="Estilo 2012 Indie Sleaze" class="product-img">
+                    <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=600&q=80" alt="Estilo 2012 Indie Sleaze" class="product-img">
                     <div class="product-info">
-                        <span class="badge-era">Ano 2012</span>
-                        <h3 class="product-title">Saia Peplum & Jaqueta Studded</h3>
-                        <p class="product-desc">Dominando a estética "Indie Sleaze" de 2012: blusas e saias com babado peplum, jaquetas de couro com tachas metálicas e estampas galáxia.</p>
+                        <span class="badge-gold">Ano 2012</span>
+                        <h3 class="product-title">Saia Peplum & Jaqueta com Spikes</h3>
+                        <p class="product-desc">A era da estética "Indie Sleaze": jaquetas de couro com tachas metálicas, cortes peplum e meias-calças trabalhadas.</p>
                         <p class="product-tags">#IndieSleaze #PeplumStyle #RockChic</p>
                     </div>
                 </article>
 
                 <article class="product-card">
-                    <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=600&q=80" alt="Estilo 2016 Streetwear Tumblr" class="product-img">
+                    <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=600&q=80" alt="Estilo 2016 Tumblr" class="product-img">
                     <div class="product-info">
-                        <span class="badge-era">Ano 2016</span>
-                        <h3 class="product-title">Choker de Veludo & Bomber Satin</h3>
-                        <p class="product-desc">A era de ouro do visual Tumblr. Jaquetas bomber acetinadas em tom rosa quartzo, gargantilhas choker pretas e tênis brancos minimalistas.</p>
-                        <p class="product-tags">#TumblrAesthetic #BomberJacket #Choker</p>
+                        <span class="badge-gold">Ano 2016</span>
+                        <h3 class="product-title">Jaqueta Bomber Satin & Choker</h3>
+                        <p class="product-desc">O auge da cultura Tumblr: jaquetas bomber acetinadas em tons pastéis, gargantilhas choker e tênis brancos minimalistas.</p>
+                        <p class="product-tags">#TumblrAesthetic #BomberSatin #ChokerTrend</p>
                     </div>
                 </article>
 
                 <article class="product-card">
-                    <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=600&q=80" alt="Estilo 2020 Minimalist Loungewear" class="product-img">
+                    <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=600&q=80" alt="Estilo 2020 Loungewear Corset" class="product-img">
                     <div class="product-info">
-                        <span class="badge-era">Ano 2020</span>
+                        <span class="badge-gold">Ano 2020</span>
                         <h3 class="product-title">Monocromo Loungewear & Corset Urbano</h3>
-                        <p class="product-desc">O conforto encontra a sofisticação urbana. Conjuntos de moletom oversize monocromáticos combinados com corsets estruturados por cima.</p>
-                        <p class="product-tags">#StreetLoungewear #Minimalismo #CorsetTrend</p>
+                        <p class="product-desc">Combinação de conforto e atitude: conjuntos em moletom oversized monocromático acentuados com corsets modernos por cima.</p>
+                        <p class="product-tags">#MinimalStreet #Loungewear #CorsetUrbano</p>
                     </div>
                 </article>
 
                 <article class="product-card">
-                    <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=600&q=80" alt="Estilo 2026 Neo-Futurismo" class="product-img">
+                    <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=600&q=80" alt="Estilo 2026 Futurista" class="product-img">
                     <div class="product-info">
-                        <span class="badge-era">Tendência 2026</span>
-                        <h3 class="product-title">Alfaiataria Bio-Sintética Fluid</h3>
-                        <p class="product-desc">A Moda do Futuro em 2026. Roupas feitas com tecidos inteligentes que reagem à iluminação ambiente e fibras biodegradáveis com corte fluido e futurista.</p>
-                        <p class="product-tags">#NeoFuturismo #EcoTech #Moda2026</p>
+                        <span class="badge-gold">Projeção 2026</span>
+                        <h3 class="product-title">Alfaiataria Bio-Sintética Fluida</h3>
+                        <p class="product-desc">O futuro da moda: peças estruturadas em fibras biodegradáveis inteligentes com corte assimétrico e acabamento refletivo.</p>
+                        <p class="product-tags">#Futurismo2026 #BioDesign #SmartFashion</p>
                     </div>
                 </article>
 
             </div>
         </section>
 
+
         <section id="perfumes-exclusivos">
-            <h2 class="section-title">Perfumaria de Nicho & Fragrâncias Únicas</h2>
-            <p class="section-subtitle">Aromas surpreendentes e incomuns criados para quem busca identidade marcante.</p>
+            <div class="section-header">
+                <h2 class="section-title">Perfumaria Conceitual & Fragrâncias Únicas</h2>
+                <p class="section-subtitle">Aromas diferenciados com alta fixação e composição olfativa detalhada.</p>
+            </div>
 
             <div class="perfumes-grid">
 
@@ -365,8 +475,8 @@
                         <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=300&q=80" alt="Perfume Cybernetic Aura" class="perfume-img">
                         <div class="perfume-main-info">
                             <h3>Aura Cybernetic</h3>
-                            <p class="aroma-concept">"O cheiro de chuva de verão sobre asfalto quente com toque flor de néon."</p>
-                            <span class="badge-era" style="background:#5c6bc0; color:#fff;">Aroma Metálico-Aquático</span>
+                            <p class="aroma-concept">"Aroma refrescante de chuva de verão sobre asfalto aquecido combinado com notas ozônicas."</p>
+                            <span class="badge-gold">Aroma Mineral-Ozônico</span>
                         </div>
                     </div>
 
@@ -374,23 +484,23 @@
                         <h4>Ficha Técnica do Perfume</h4>
                         <div class="ficha-item">
                             <span class="ficha-label">Família Olfativa:</span>
-                            <span class="ficha-val">Ozônica / Floral Mineral</span>
+                            <span class="ficha-val">Ozônica / Floral Fresca</span>
                         </div>
                         <div class="ficha-item">
                             <span class="ficha-label">Notas de Topo:</span>
-                            <span class="ficha-val">Orvalho, Ozônio Metálico e Bergamota</span>
+                            <span class="ficha-val">Orvalho Matinal, Ozônio Metálico e Bergamota</span>
                         </div>
                         <div class="ficha-item">
                             <span class="ficha-label">Notas de Coração:</span>
-                            <span class="ficha-val">Lótus Negra e Petricor (Cheiro de Chuva)</span>
+                            <span class="ficha-val">Lótus Negra e Petricor (Acorde de Chuva)</span>
                         </div>
                         <div class="ficha-item">
                             <span class="ficha-label">Notas de Fundo:</span>
-                            <span class="ficha-val">Âmbar Cinzento e Almíscar Branco</span>
+                            <span class="ficha-val">Âmbar Cinzento e Almíscar Suave</span>
                         </div>
                         <div class="ficha-item">
                             <span class="ficha-label">Fixação / Projeção:</span>
-                            <span class="ficha-val">Alta (10h+) / Marcante</span>
+                            <span class="ficha-val">Alta (10 horas) / Marcante</span>
                         </div>
                     </div>
                 </article>
@@ -400,8 +510,8 @@
                         <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&w=300&q=80" alt="Perfume Oasis Noir" class="perfume-img">
                         <div class="perfume-main-info">
                             <h3>Oasis Noir</h3>
-                            <p class="aroma-concept">"Grãos de café torrado combinados com incenso do oriente e sal marinho."</p>
-                            <span class="badge-era" style="background:#8d6e63; color:#fff;">Aroma Amadeirado Defumado</span>
+                            <p class="aroma-concept">"Combinação exótica de grãos de café torrado, incenso oriental e leve toque de flor de sal."</p>
+                            <span class="badge-gold">Aroma Amadeirado Defumado</span>
                         </div>
                     </div>
 
@@ -413,11 +523,11 @@
                         </div>
                         <div class="ficha-item">
                             <span class="ficha-label">Notas de Topo:</span>
-                            <span class="ficha-val">Pimenta Rosa e Flor de Sal</span>
+                            <span class="ficha-val">Pimenta Rosa e Flor de Sal Marinho</span>
                         </div>
                         <div class="ficha-item">
                             <span class="ficha-label">Notas de Coração:</span>
-                            <span class="ficha-val">Café Espresso Torrado e Incenso Myrrha</span>
+                            <span class="ficha-val">Grãos de Café Torrado e Incenso Myrrha</span>
                         </div>
                         <div class="ficha-item">
                             <span class="ficha-label">Notas de Fundo:</span>
@@ -435,8 +545,8 @@
                         <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=300&q=80" alt="Perfume Sol de Velvet" class="perfume-img">
                         <div class="perfume-main-info">
                             <h3>Sol de Velvet</h3>
-                            <p class="aroma-concept">"Doce cremoso do figo maturado com folha de tabaco e baunilha bourbon."</p>
-                            <span class="badge-era" style="background:#d4af37; color:#000;">Aroma Frutal Aveludado</span>
+                            <p class="aroma-concept">"Toce aveludado do figo maduro envolto por folhas de tabaco loiro e baunilha bourbon."</p>
+                            <span class="badge-gold">Aroma Frutal Licoroso</span>
                         </div>
                     </div>
 
@@ -444,23 +554,23 @@
                         <h4>Ficha Técnica do Perfume</h4>
                         <div class="ficha-item">
                             <span class="ficha-label">Família Olfativa:</span>
-                            <span class="ficha-val">Frutal Licoroso com Tabaco</span>
+                            <span class="ficha-val">Frutal Quente com Tabaco</span>
                         </div>
                         <div class="ficha-item">
                             <span class="ficha-label">Notas de Topo:</span>
-                            <span class="ficha-val">Figo Maduro e Mandarina Dourada</span>
+                            <span class="ficha-val">Figo Doce e Mandarina Dourada</span>
                         </div>
                         <div class="ficha-item">
                             <span class="ficha-label">Notas de Coração:</span>
-                            <span class="ficha-val">Folha de Tabaco Loiro e Flor de Baunilha</span>
+                            <span class="ficha-val">Folhas de Tabaco e Flor de Baunilha</span>
                         </div>
                         <div class="ficha-item">
                             <span class="ficha-label">Notas de Fundo:</span>
-                            <span class="ficha-val">Bourbon e Cedro de Atlas</span>
+                            <span class="ficha-val">Licor de Bourbon e Cedro do Atlas</span>
                         </div>
                         <div class="ficha-item">
                             <span class="ficha-label">Fixação / Projeção:</span>
-                            <span class="ficha-val">Moderada/Alta (8h) / Envolvente</span>
+                            <span class="ficha-val">Alta (9 horas) / Envolvente</span>
                         </div>
                     </div>
                 </article>
@@ -471,7 +581,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 <strong>Fashion World</strong>. Todos os direitos reservados. Design e curadoria por especialistas do mundo da moda.</p>
+        <p>&copy; 2026 <strong>Fashion World</strong>. O seu portal de notícias, tendências e perfumaria de luxo.</p>
     </footer>
 
 </body>
