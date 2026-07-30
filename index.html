@@ -3,273 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fashion World - O Universo da Moda e Tendências</title>
+    <title>Fashion World | Notícias, Desfiles e Tendências</title>
     <style>
-        /* --- RESET E VARIÁVEIS --- */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Didot', 'Playfair Display', Georgia, serif;
-        }
-
-        :root {
-            --primary: #111111;       /* Preto elegante */
-            --accent: #d4af37;        /* Dourado High Fashion */
-            --bg: #fafafa;            /* Fundo clean */
-            --card-bg: #ffffff;
-            --text-dark: #222222;
-            --text-muted: #777777;
-            --font-sans: 'Segoe UI', Arial, sans-serif; /* Para leitura fluida */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background-color: var(--bg);
-            color: var(--text-dark);
+            background-color: #f9f9f9;
+            color: #333;
             line-height: 1.6;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /* --- HEADER & NAVEGAÇÃO --- */
+        /* Cabeçalho */
         header {
-            background-color: var(--card-bg);
-            border-bottom: 1px solid #eaeaea;
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            background-color: #111;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 3px solid #d4af37; /* Detalhe dourado */
         }
 
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .logo {
+        header h1 {
             font-size: 2.5rem;
-            font-weight: 900;
-            letter-spacing: 4px;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            color: var(--primary);
-            margin-bottom: 0.8rem;
         }
 
-        .logo span {
-            color: var(--accent);
+        header p {
+            font-size: 0.9rem;
+            color: #aaa;
+            margin-top: 5px;
         }
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-            font-family: var(--font-sans);
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 600;
+        /* Menu de Navegação */
+        nav {
+            background-color: #222;
+            text-align: center;
         }
 
         nav a {
-            transition: color 0.2s;
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 20px;
+            display: inline-block;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.3s;
         }
 
         nav a:hover {
-            color: var(--accent);
+            background-color: #d4af37;
+            color: #000;
         }
 
-        /* --- LAYOUT PRINCIPAL --- */
+        /* Conteúdo Principal */
         .container {
-            max-width: 1200px;
-            margin: 2.5rem auto;
-            padding: 0 1.5rem;
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
             display: grid;
-            grid-template-columns: 2.5fr 1fr;
-            gap: 2.5rem;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
         }
 
-        /* --- DESTAQUE (HERO) --- */
-        .hero-post {
-            background: var(--card-bg);
-            border-radius: 4px;
+        /* Seção de Notícias */
+        .card {
+            background: #fff;
+            margin-bottom: 25px;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            margin-bottom: 2.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
         }
 
-        .hero-image {
+        .card img {
             width: 100%;
-            height: 420px;
-            background-color: #d1d5db;
+            height: 250px;
             object-fit: cover;
         }
 
-        .hero-content {
-            padding: 2rem;
+        .card-content {
+            padding: 20px;
         }
 
         .tag {
             display: inline-block;
-            background-color: var(--primary);
-            color: white;
-            font-family: var(--font-sans);
-            font-size: 0.7rem;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            padding: 0.3rem 0.8rem;
+            background: #d4af37;
+            color: #fff;
+            padding: 3px 8px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            border-radius: 3px;
+            margin-bottom: 10px;
             text-transform: uppercase;
-            margin-bottom: 0.8rem;
         }
 
-        .hero-title {
-            font-size: 2.2rem;
-            margin-bottom: 0.8rem;
-            line-height: 1.2;
-            font-weight: 400;
+        .card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #111;
         }
 
-        .meta {
-            font-family: var(--font-sans);
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-bottom: 1rem;
-        }
-
-        .hero-excerpt {
-            font-family: var(--font-sans);
-            color: #444;
+        .card p {
+            color: #666;
             font-size: 0.95rem;
         }
 
-        /* --- FEED DE NOTÍCIAS --- */
-        .news-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+        /* Barra Lateral (Sidebar) */
+        aside .widget {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
         }
 
-        .card {
-            background: var(--card-bg);
-            border-radius: 4px;
-            overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-3px);
-        }
-
-        .card-img {
-            width: 100%;
-            height: 220px;
-            background-color: #e5e7eb;
-            object-fit: cover;
-        }
-
-        .card-body {
-            padding: 1.2rem;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .card-title {
-            font-size: 1.25rem;
-            font-weight: 400;
-            margin: 0.5rem 0;
-            line-height: 1.3;
-        }
-
-        /* --- BARRA LATERAL (SIDEBAR) --- */
-        .sidebar-box {
-            background: var(--card-bg);
-            padding: 1.8rem;
-            border-radius: 4px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-            margin-bottom: 2rem;
-            border-top: 3px solid var(--accent);
-        }
-
-        .sidebar-title {
+        aside h3 {
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
             font-size: 1.1rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 1.2rem;
-            font-family: var(--font-sans);
-            font-weight: 700;
         }
 
-        .trending-list {
+        aside ul {
             list-style: none;
         }
 
-        .trending-item {
-            margin-bottom: 1.2rem;
-            padding-bottom: 1.2rem;
-            border-bottom: 1px solid #f0f0f0;
+        aside ul li {
+            margin-bottom: 12px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 8px;
         }
 
-        .trending-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
+        aside ul li a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
         }
 
-        .trending-tag {
-            font-family: var(--font-sans);
-            font-size: 0.65rem;
-            color: var(--accent);
-            text-transform: uppercase;
-            font-weight: 700;
-            letter-spacing: 1px;
+        aside ul li a:hover {
+            color: #d4af37;
         }
 
-        .trending-text {
-            font-size: 1rem;
-            line-height: 1.3;
-            display: block;
-            margin-top: 0.2rem;
-        }
-
-        /* --- FOOTER --- */
+        /* Rodapé */
         footer {
-            background-color: var(--primary);
-            color: white;
+            background-color: #111;
+            color: #888;
             text-align: center;
-            padding: 3rem 1rem;
-            margin-top: 4rem;
-            font-family: var(--font-sans);
-        }
-
-        footer p {
+            padding: 20px;
+            margin-top: 40px;
             font-size: 0.85rem;
-            letter-spacing: 1px;
         }
 
-        /* --- RESPONSIVIDADE --- */
+        /* Responsividade para celulares */
         @media (max-width: 768px) {
             .container {
                 grid-template-columns: 1fr;
-            }
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 1rem;
-            }
-            .hero-title {
-                font-size: 1.6rem;
-            }
-            .hero-image {
-                height: 260px;
             }
         }
     </style>
@@ -277,104 +171,71 @@
 <body>
 
     <header>
-        <div class="header-container">
-            <a href="#" class="logo">Fashion <span>World</span></a>
-            <nav>
-                <ul>
-                    <li><a href="#">Desfiles</a></li>
-                    <li><a href="#">Tendências</a></li>
-                    <li><a href="#">Modelos & Ícones</a></li>
-                    <li><a href="#">Estilo de Vida</a></li>
-                </ul>
-            </nav>
-        </div>
+        <h1>Fashion World</h1>
+        <p>Sua fonte confiável sobre tendências, desfiles e os ícones da moda mundial</p>
     </header>
+
+    <nav>
+        <a href="#desfiles">Desfiles</a>
+        <a href="#tendencias">Tendências</a>
+        <a href="#famosos">Modelos e Artistas</a>
+        <a href="#virais">Notícias Virais</a>
+    </nav>
 
     <div class="container">
         
         <main>
-            <article class="hero-post">
-                <a href="#">
-                    <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1000&q=80" alt="Desfile de Moda" class="hero-image">
-                    <div class="hero-content">
-                        <span class="tag">Paris Fashion Week</span>
-                        <h1 class="hero-title">Os destaques mais marcantes e os visuais que revolucionaram as passarelas nesta temporada</h1>
-                        <p class="meta">Por <strong>Redação Fashion World</strong> • Atualizado hoje • Verificado</p>
-                        <p class="hero-excerpt">Diretores criativos das maiores casas de alta-costura apresentaram coleções que prometem ditar as cores e texturas dos próximos meses. Confira a análise completa dos desfiles.</p>
-                    </div>
-                </a>
+            
+            <article class="card" id="desfiles">
+                <img src="https://via.placeholder.com/800x400" alt="Desfile de Moda">
+                <div class="card-content">
+                    <span class="tag">Desfiles</span>
+                    <h2>Semana da Moda de Paris: Os destaques que pararam as redes sociais</h2>
+                    <p>Confira os momentos mais marcantes e virais que dominaram as passarelas da alta-costura nesta temporada e o que esperar dos próximos eventos.</p>
+                </div>
             </article>
 
-            <section class="news-grid">
-                
-                <article class="card">
-                    <a href="#">
-                        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=500&q=80" alt="Tendências de Moda" class="card-img">
-                        <div class="card-body">
-                            <span class="tag" style="background-color: var(--accent); color: black;">Tendência</span>
-                            <h2 class="card-title">As cores e estampas que vão dominar o guarda-roupa no próximo ano</h2>
-                            <p class="meta">Há 3 horas</p>
-                        </div>
-                    </a>
-                </article>
+            <article class="card" id="tendencias">
+                <img src="https://via.placeholder.com/800x400" alt="Novas Tendências">
+                <div class="card-content">
+                    <span class="tag">Tendências</span>
+                    <h2>As cores e estilos que vão dominar o mundo da moda no próximo ano</h2>
+                    <p>Descubra as novas apostas dos grandes estilistas e como as influenciadoras estão adaptando esses looks para o dia a dia.</p>
+                </div>
+            </article>
 
-                <article class="card">
-                    <a href="#">
-                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80" alt="Supermodelo" class="card-img">
-                        <div class="card-body">
-                            <span class="tag">Supermodelos</span>
-                            <h2 class="card-title">A trajetória impressionante da modelo que virou o nome mais requisitado do mercado</h2>
-                            <p class="meta">Há 5 horas</p>
-                        </div>
-                    </a>
-                </article>
+            <article class="card" id="famosos">
+                <img src="https://via.placeholder.com/800x400" alt="Modelos Famosas">
+                <div class="card-content">
+                    <span class="tag">Ícones</span>
+                    <h2>Top models e artistas que estão redefinindo o sucesso na indústria</h2>
+                    <p>Conheça a trajetória das personalidades que começaram nas passarelas e hoje movimentam bilhões no mercado da beleza e do entretenimento.</p>
+                </div>
+            </article>
 
-                <article class="card">
-                    <a href="#">
-                        <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=500&q=80" alt="Bastidores da Moda" class="card-img">
-                        <div class="card-body">
-                            <span class="tag">Bastidores</span>
-                            <h2 class="card-title">Estilistas emergentes que alcançaram o topo do mundo fashion recentemente</h2>
-                            <p class="meta">Há 7 horas</p>
-                        </div>
-                    </a>
-                </article>
-
-            </section>
         </main>
 
         <aside>
-            <div class="sidebar-box">
-                <h3 class="sidebar-title">Calendário Fashion</h3>
-                <ul class="trending-list">
-                    <li class="trending-item">
-                        <span class="trending-tag">Em Breve</span>
-                        <a href="#" class="trending-text"><strong>Semana de Moda de Milão:</strong> Veja o cronograma oficial dos desfiles</a>
-                    </li>
-                    <li class="trending-item">
-                        <span class="trending-tag">Confirmado</span>
-                        <a href="#" class="trending-text"><strong>Met Gala:</strong> O tema e as estrelas confirmadas no evento</a>
-                    </li>
-                    <li class="trending-item">
-                        <span class="trending-tag">Exclusivo</span>
-                        <a href="#" class="trending-text"><strong>Nova York:</strong> Marcas apostam em sustentabilidade no próximo ciclo</a>
-                    </li>
+            <div class="widget">
+                <h3>Em Alta (Virais)</h3>
+                <ul>
+                    <li><a href="#">O look ousado do tapete vermelho que dividiu opiniões</a></li>
+                    <li><a href="#">Marca famosa lança acessório inusitado e vira meme</a></li>
+                    <li><a href="#">A volta dos anos 2000: Entenda a tendência Y2K</a></li>
                 </ul>
             </div>
 
-            <div class="sidebar-box" style="border-top-color: var(--primary);">
-                <h3 class="sidebar-title">Jornalismo de Moda</h3>
-                <p style="font-family: var(--font-sans); font-size: 0.85rem; color: var(--text-muted);">
-                    Notícias apuradas com fontes diretas das passarelas, agências internacionais e críticos renomados da indústria fashion.
-                </p>
+            <div class="widget">
+                <h3>Calendário de Desfiles</h3>
+                <p><strong>São Paulo Fashion Week:</strong> Em breve</p>
+                <p><strong>Milan Fashion Week:</strong> Próximo mês</p>
             </div>
         </aside>
 
     </div>
 
     <footer>
-        <p>&copy; 2026 FASHION WORLD. TODOS OS DIREITOS RESERVADOS.</p>
-        <p style="margin-top: 0.5rem; color: #888888; font-size: 0.75rem;">Sua cobertura diária sobre alta-costura, desfiles e estilo.</p>
+        <p>&copy; 2026 Fashion World. Todos os direitos reservados.</p>
     </footer>
 
 </body>
