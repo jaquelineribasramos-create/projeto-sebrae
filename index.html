@@ -3,24 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ViralMode - O Guia Definitivo da Moda e Passarelas</title>
+    <title>ViralFeed - As Notícias Mais Quentes da Web</title>
     <style>
         /* --- RESET E VARIÁVEIS --- */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         :root {
-            --primary: #4a154b;       /* Roxo elegante */
-            --accent: #e01e5a;        /* Magenta vibrante / Tendência */
-            --bg: #fafafa;            /* Fundo limpo */
+            --primary: #2563eb;       /* Azul confiança */
+            --accent: #ff4757;        /* Vermelho destaque/viral */
+            --bg: #f8fafc;            /* Fundo levemente cinza */
             --card-bg: #ffffff;       /* Fundo dos cards */
-            --text-dark: #111111;    /* Texto principal */
-            --text-muted: #666666;   /* Texto secundário */
-            --border: #eeeeee;
+            --text-dark: #1e293b;    /* Texto principal */
+            --text-muted: #64748b;   /* Texto secundário */
         }
 
         body {
@@ -37,7 +36,7 @@
         /* --- HEADER & NAVEGAÇÃO --- */
         header {
             background-color: var(--card-bg);
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid #e2e8f0;
             position: sticky;
             top: 0;
             z-index: 100;
@@ -46,18 +45,16 @@
         .header-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 1.2rem 1.5rem;
+            padding: 1rem 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-size: 2rem;
-            font-weight: 900;
-            letter-spacing: -1px;
-            color: var(--text-dark);
-            text-transform: uppercase;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
         }
 
         .logo span {
@@ -67,20 +64,17 @@
         nav ul {
             display: flex;
             list-style: none;
-            gap: 1.8rem;
+            gap: 1.5rem;
         }
 
         nav a {
-            font-weight: 700;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-weight: 600;
             color: var(--text-dark);
             transition: color 0.2s;
         }
 
         nav a:hover {
-            color: var(--accent);
+            color: var(--primary);
         }
 
         /* --- LAYOUT PRINCIPAL --- */
@@ -96,63 +90,53 @@
         /* --- DESTAQUE (HERO) --- */
         .hero-post {
             background: var(--card-bg);
-            border-radius: 8px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            margin-bottom: 2.5rem;
-            border: 1px solid var(--border);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+            transition: transform 0.2s;
+        }
+
+        .hero-post:hover {
+            transform: translateY(-2px);
         }
 
         .hero-image {
             width: 100%;
-            height: 420px;
-            background-color: #ddd;
+            height: 350px;
+            background-color: #cbd5e1;
             object-fit: cover;
         }
 
         .hero-content {
-            padding: 1.8rem;
+            padding: 1.5rem;
         }
 
         .tag {
             display: inline-block;
             background-color: var(--accent);
             color: white;
-            font-size: 0.7rem;
-            font-weight: 800;
-            padding: 0.3rem 0.8rem;
-            border-radius: 3px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.5rem;
         }
 
         .hero-title {
-            font-size: 2.2rem;
-            font-weight: 800;
-            margin-bottom: 0.8rem;
-            line-height: 1.2;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
         }
 
         .meta {
             font-size: 0.85rem;
             color: var(--text-muted);
             margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
         /* --- FEED DE NOTÍCIAS --- */
-        .section-title {
-            font-size: 1.4rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1.5rem;
-            border-left: 4px solid var(--accent);
-            padding-left: 0.8rem;
-        }
-
         .news-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -161,56 +145,48 @@
 
         .card {
             background: var(--card-bg);
-            border-radius: 6px;
+            border-radius: 8px;
             overflow: hidden;
-            border: 1px solid var(--border);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
             display: flex;
             flex-direction: column;
-            transition: transform 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-4px);
         }
 
         .card-img {
             width: 100%;
-            height: 220px;
-            background-color: #eee;
+            height: 180px;
+            background-color: #e2e8f0;
             object-fit: cover;
         }
 
         .card-body {
-            padding: 1.2rem;
+            padding: 1rem;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
         }
 
         .card-title {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             font-weight: 700;
-            margin: 0.6rem 0;
-            line-height: 1.3;
+            margin: 0.5rem 0;
+            line-height: 1.4;
         }
 
         /* --- BARRA LATERAL (SIDEBAR) --- */
         .sidebar-box {
             background: var(--card-bg);
             padding: 1.5rem;
-            border-radius: 6px;
-            border: 1px solid var(--border);
-            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+            margin-bottom: 1.5rem;
         }
 
         .sidebar-title {
-            font-size: 1.1rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-bottom: 2px solid var(--text-dark);
+            font-size: 1.2rem;
+            border-bottom: 2px solid var(--primary);
             padding-bottom: 0.5rem;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
         }
 
         .trending-list {
@@ -219,29 +195,20 @@
 
         .trending-item {
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             gap: 1rem;
-            margin-bottom: 1.2rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px dashed var(--border);
-        }
-
-        .trending-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
+            margin-bottom: 1rem;
         }
 
         .trending-number {
-            font-size: 1.4rem;
-            font-weight: 900;
-            color: var(--accent);
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-muted);
         }
 
         .trending-text {
             font-size: 0.95rem;
-            font-weight: 700;
-            line-height: 1.3;
+            font-weight: 600;
         }
 
         /* --- FOOTER --- */
@@ -249,8 +216,8 @@
             background-color: var(--text-dark);
             color: white;
             text-align: center;
-            padding: 3rem 1rem;
-            margin-top: 4rem;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
         }
 
         /* --- RESPONSIVIDADE --- */
@@ -259,13 +226,7 @@
                 grid-template-columns: 1fr;
             }
             .hero-image {
-                height: 250px;
-            }
-            .hero-title {
-                font-size: 1.6rem;
-            }
-            nav ul {
-                display: none; /* Em um site real, aqui entraria um menu hambúrguer */
+                height: 220px;
             }
         }
     </style>
@@ -274,16 +235,102 @@
 
     <header>
         <div class="header-container">
-            <a href="#" class="logo">Viral<span>Mode</span></a>
+            <a href="#" class="logo">Viral<span>Feed</span></a>
             <nav>
                 <ul>
-                    <li><a href="#">Desfiles</a></li>
-                    <li><a href="#">Tendências</a></li>
-                    <li><a href="#">Modelos</a></li>
-                    <li><a href="#">Famosos & Red Carpet</a></li>
+                    <li><a href="#">Em Alta</a></li>
+                    <li><a href="#">Tecnologia</a></li>
+                    <li><a href="#">Curiosidades</a></li>
+                    <li><a href="#">Pop</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <div class="container
+    <div class="container">
+        
+        <main>
+            <article class="hero-post">
+                <a href="#">
+                    <img src="https://via.placeholder.com/800x400" alt="Notícia Destaque" class="hero-image">
+                    <div class="hero-content">
+                        <span class="tag">🔥 Bombando</span>
+                        <h1 class="hero-title">Nova descoberta em inteligência artificial deixa a comunidade científica impressionada</h1>
+                        <p class="meta">Por <strong>Redação</strong> • Há 2 horas • Checado por especialistas</p>
+                        <p>Pesquisadores revelam um avanço inesperado que pode mudar totalmente a forma como interagimos com a tecnologia no dia a dia...</p>
+                    </div>
+                </a>
+            </article>
+
+            <section class="news-grid">
+                
+                <article class="card">
+                    <a href="#">
+                        <img src="https://via.placeholder.com/400x250" alt="Notícia 1" class="card-img">
+                        <div class="card-body">
+                            <span class="tag" style="background-color: var(--primary);">Curiosidade</span>
+                            <h2 class="card-title">Por que este fenômeno natural raro está intrigando moradores no interior?</h2>
+                            <p class="meta">Há 4 horas</p>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="card">
+                    <a href="#">
+                        <img src="https://via.placeholder.com/400x250" alt="Notícia 2" class="card-img">
+                        <div class="card-body">
+                            <span class="tag" style="background-color: var(--primary);">Tecnologia</span>
+                            <h2 class="card-title">Aplicativo ganha milhões de usuários em 24h após funcionalidade surpreendente</h2>
+                            <p class="meta">Há 5 horas</p>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="card">
+                    <a href="#">
+                        <img src="https://via.placeholder.com/400x250" alt="Notícia 3" class="card-img">
+                        <div class="card-body">
+                            <span class="tag" style="background-color: var(--primary);">Entretenimento</span>
+                            <h2 class="card-title">Teoria de fãs sobre novo filme é confirmada por diretor em entrevista</h2>
+                            <p class="meta">Há 6 horas</p>
+                        </div>
+                    </a>
+                </article>
+
+            </section>
+        </main>
+
+        <aside>
+            <div class="sidebar-box">
+                <h3 class="sidebar-title">Mais Lidas Hoje</h3>
+                <ul class="trending-list">
+                    <li class="trending-item">
+                        <span class="trending-number">1</span>
+                        <a href="#" class="trending-text">O segredo por trás do vídeo que bateu 50 milhões de views</a>
+                    </li>
+                    <li class="trending-item">
+                        <span class="trending-number">2</span>
+                        <a href="#" class="trending-text">Estudo aponta o hábito simples que melhora o foco em 30%</a>
+                    </li>
+                    <li class="trending-item">
+                        <span class="trending-number">3</span>
+                        <a href="#" class="trending-text">5 truques do smartphone que quase ninguém conhece</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-box" style="text-align: center; background-color: #e0f2fe;">
+                <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Fatos Checados</h3>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">Toda informação em nosso site passa por verificação rigorosa antes de ser publicada.</p>
+            </div>
+        </aside>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 ViralFeed. Todos os direitos reservados.</p>
+        <p style="font-size: 0.8rem; margin-top: 0.5rem; color: #94a3b8;">Jornalismo transparente e ágil.</p>
+    </footer>
+
+</body>
+</html>
